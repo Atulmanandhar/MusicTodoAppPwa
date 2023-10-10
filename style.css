@@ -1,0 +1,153 @@
+:root {
+  --darkColour: #343e36;
+  --lightColour: rgb(246, 231, 213);
+  --shadow-color: 33deg 26% 56%;
+
+  --shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+/* css resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  border: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--lightColour);
+  color: var(--darkColour);
+}
+
+input,
+button {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* css start */
+header {
+  box-shadow: var(--shadow);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+nav .image-container {
+  width: 36px;
+}
+
+nav .image-container img {
+  height: 100%;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.formGroup:nth-child(2) {
+  margin-top: 0.5rem;
+}
+
+.error-text {
+  color: red;
+}
+.hidden {
+  display: none;
+}
+
+#newSongContainer button {
+  padding: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formGroup input {
+  padding-block: 0.3rem;
+  border-radius: 4px;
+}
+
+#songListContainer {
+  margin-top: 2rem;
+}
+
+.songsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.song-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/*  desktop */
+@media (min-width: 800px) {
+  nav,
+  main {
+    max-width: 1376px;
+    margin-inline: auto;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+  }
+  #newSongContainer {
+    flex: 1;
+  }
+
+  #songListContainer {
+    flex: 2;
+    margin-top: 0rem;
+  }
+}
